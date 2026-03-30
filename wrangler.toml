@@ -1,4 +1,25 @@
 name = "github-profile-trophy"
 main = "worker/index.js"
 compatibility_date = "2024-09-23"
-compatibility_flags = ["nodejs_compat"]
+
+# ---------------------------------------------------------------------------
+# Secrets (set via `wrangler secret put GITHUB_TOKEN`)
+# ---------------------------------------------------------------------------
+# GITHUB_TOKEN  — required: GitHub Personal Access Token with read:user scope
+# GITHUB_TOKEN2 — optional: second token for rate-limit fallback
+# GITHUB_API    — optional: override GitHub GraphQL endpoint
+
+# ---------------------------------------------------------------------------
+# Environment overrides
+# ---------------------------------------------------------------------------
+[env.production]
+name = "github-profile-trophy"
+
+[env.staging]
+name = "github-profile-trophy-staging"
+
+# ---------------------------------------------------------------------------
+# Observability
+# ---------------------------------------------------------------------------
+[observability]
+enabled = true
